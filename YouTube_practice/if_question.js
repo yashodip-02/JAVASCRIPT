@@ -5,5 +5,3 @@ if (score >= 80 && score <= 100 ) {
     console.log("hi");
     
 }
-
-
