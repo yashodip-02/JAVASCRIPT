@@ -1,0 +1,32 @@
+// Comparison Operator
+
+// (<=) Less than Equl to operator
+// [1] Example
+let a = 54;
+let b = 25;
+let c = a <= b;
+console.log(c);
+
+// [2] Example
+let e = 47;
+let f = 838;
+let g = e <= f;
+console.log(g);
+
+// [3] Example
+let h = 272;
+let i = 272;
+let j = h <= i;
+console.log(j);
+
+// [4] Example
+let k = 274;
+let l = 727;
+let m = k <= l;
+console.log(m);
+
+// [5] Example
+let n = 547;
+let o = 257;
+let p = n <= o;
+console.log(p);
