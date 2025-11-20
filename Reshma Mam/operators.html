@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Operators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { background:#f8f9fa; }
+    .fade-in { animation: fadeIn 0.8s ease; }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    .example-box { background:#fff; border-radius:10px; padding:15px; box-shadow:0 0.3rem 0.8rem rgba(0,0,0,.05); }
+    .revision-box { background:#dbeafe; border-left:4px solid #0d6efd; padding:12px 15px; border-radius:6px; }
+    pre { background:#f1f1f1; padding:8px; border-radius:6px; }
+</style>
+</head>
+<body>
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+<a class="navbar-brand fw-bold" href="index.html">JS Tutorial</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link" href="intro.html">Introduction</a></li>
+<li class="nav-item"><a class="nav-link" href="variables.html">Variables</a></li>
+<li class="nav-item"><a class="nav-link active" href="operators.html">Operators</a></li>
+<li class="nav-item"><a class="nav-link" href="conditions.html">Conditionals</a></li>
+<li class="nav-item"><a class="nav-link" href="practice.html">Practice</a></li>
+</ul>
+</div>
+</div>
+</nav>
+ 
+<div class="container py-4 fade-in">
+<h2>Operators in JavaScript</h2>
+ 
+  <!-- Arithmetic -->
+<h4>Arithmetic Operators</h4>
+<p>+, -, *, /, %, ** (power)</p>
+<div class="example-box mb-4">
+<h5>Practical: Arithmetic Calculator</h5>
+<div class="row g-2">
+<div class="col-md-3">
+<input id="num1" type="number" class="form-control form-control-sm" placeholder="Number 1">
+</div>
+<div class="col-md-3">
+<input id="num2" type="number" class="form-control form-control-sm" placeholder="Number 2">
+</div>
+<div class="col-md-3">
+<button class="btn btn-primary btn-sm w-100" onclick="calcArithmetic()">Calculate</button>
+</div>
+</div>
+<pre class="mt-2 mb-0" id="arithOutput"></pre>
+</div>
+ 
+  <!-- Comparison -->
+<h4>Comparison Operators</h4>
+<p>==, ===, !=, &lt;, &gt;, &lt;=, &gt;=</p>
+<div class="example-box mb-4">
+<h5>Practical: == vs ===</h5>
+<button class="btn btn-secondary btn-sm" onclick="compareDemo()">Run Comparison Demo</button>
+<pre class="mt-2 mb-0" id="compOutput"></pre>
+</div>
+ 
+  <!-- Assignment -->
+<h4>Assignment Operators</h4>
+<p>=, +=, -=, *=, /=, %=</p>
+<div class="example-box mb-4">
+<h5>Practical: Assignment Step-by-Step</h5>
+<button class="btn btn-success btn-sm" onclick="assignmentDemo()">Show Example</button>
+<pre class="mt-2 mb-0" id="assignOutput"></pre>
+</div>
+ 
+  <!-- Logical -->
+<h4>Logical Operators</h4>
+<p>AND (&&), OR (||), NOT (!)</p>
+<div class="example-box mb-4">
+<h5>Practical: Login Access Check</h5>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" id="isLoggedIn">
+<label class="form-check-label" for="isLoggedIn">User is logged in</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" id="isAdmin">
+<label class="form-check-label" for="isAdmin">User is admin</label>
+</div>
+<button class="btn btn-warning btn-sm mt-2" onclick="logicDemo()">Check Access</button>
+<p class="mt-2 mb-0" id="logicOutput"></p>
+</div>
+ 
+  <!-- String -->
+<h4>String Operator</h4>
+<p>+ (concatenation)</p>
+<div class="example-box mb-4">
+<h5>Practical: String Concatenation</h5>
+<div class="row g-2">
+<div class="col-md-4">
+<input id="fname" class="form-control form-control-sm" placeholder="First Name">
+</div>
+<div class="col-md-4">
+<input id="lname" class="form-control form-control-sm" placeholder="Last Name">
+</div>
+<div class="col-md-4">
+<button class="btn btn-dark btn-sm w-100" onclick="joinName()">Create Full Name</button>
+</div>
+</div>
+<p class="mt-2 mb-0" id="nameOutput"></p>
+</div>
+ 
+  <div class="revision-box">
+<strong>Revision:</strong>
+<ul class="mb-0">
+<li>Arithmetic: used for maths operations.</li>
+<li>Comparison: returns true/false.</li>
+<li>Assignment: updates variable value.</li>
+<li>Logical: combines conditions.</li>
+<li>String + used to join text.</li>
+</ul>
+</div>
+</div>
+ 
+<script>
+function calcArithmetic() {
+  const a = Number(document.getElementById("num1").value || 0);
+  const b = Number(document.getElementById("num2").value || 0);
+  let r  = "";
+  r += `a + b = ${a + b}\\n`;
+  r += `a - b = ${a - b}\\n`;
+  r += `a * b = ${a * b}\\n`;
+  r += `a / b = ${b !== 0 ? (a / b) : "∞ (division by zero)" }\\n`;
+  r += `a % b = ${b !== 0 ? (a % b) : "NaN"}\\n`;
+  r += `a ** b = ${a ** b}`;
+  document.getElementById("arithOutput").innerText = r;
+}
+ 
+function compareDemo() {
+  const a = 5;
+  const b = "5";
+  let r = "";
+  r += `a = 5 (number), b = "5" (string)\\n`;
+  r += `a == b  → ${a == b}\\n`;
+  r += `a === b → ${a === b}\\n`;
+  r += `a != b  → ${a != b}\\n`;
+  r += `a !== b → ${a !== b}`;
+  document.getElementById("compOutput").innerText = r;
+}
+ 
+function assignmentDemo() {
+  let x = 10;
+  let r = "";
+  r += `let x = 10;\\n`;
+  x += 5;  r += `x += 5  → ${x}\\n`;
+  x -= 3;  r += `x -= 3  → ${x}\\n`;
+  x *= 2;  r += `x *= 2  → ${x}\\n`;
+  x /= 4;  r += `x /= 4  → ${x}`;
+  document.getElementById("assignOutput").innerText = r;
+}
+ 
+function logicDemo() {
+  const isLoggedIn = document.getElementById("isLoggedIn").checked;
+  const isAdmin    = document.getElementById("isAdmin").checked;
+ 
+  let msg;
+  if (isLoggedIn && isAdmin) {
+    msg = "Full access: user is logged in AND admin (&&).";
+  } else if (isLoggedIn || isAdmin) {
+    msg = "Partial access: at least one condition is true (||).";
+  } else {
+    msg = "No access: both conditions are false.";
+  }
+  document.getElementById("logicOutput").innerText = msg;
+}
+ 
+function joinName() {
+  const f = document.getElementById("fname").value.trim();
+  const l = document.getElementById("lname").value.trim();
+  const full = f + " " + l;
+  document.getElementById("nameOutput").innerText = "Full Name: " + full;
+}
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

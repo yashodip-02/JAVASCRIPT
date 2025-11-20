@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tutorial | Home</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.9s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            background: #343a40;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .topic-card {
+            transition: 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">JS Tutorial</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="intro.html">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="variables.html">Variables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="operators.html">Operators</a></li>
+                    <li class="nav-item"><a class="nav-link" href="conditions.html">Conditionals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="practice.html">Practice</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section fade-in">
+        <h1 class="display-5 fw-bold">Learn JavaScript Step by Step</h1>
+        <p class="lead mb-0">
+            Introduction • History • Client & Server • Variables • Data Types • Operators • Conditionals • Practice
+        </p>
+    </section>
+
+    <div class="container py-5 fade-in">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card topic-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">JavaScript Basics</h5>
+                        <p class="card-text">Introduction, history, JS engines, client-side & server-side.</p>
+                        <a href="intro.html" class="btn btn-dark w-100">Start Topic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card topic-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Variables & Data Types</h5>
+                        <p class="card-text">var, let, const, primitive types, with practical examples.</p>
+                        <a href="variables.html" class="btn btn-dark w-100">Start Topic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card topic-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Operators & Logic</h5>
+                        <p class="card-text">Arithmetic, comparison, assignment, logical & string operators.</p>
+                        <a href="operators.html" class="btn btn-dark w-100">Start Topic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card topic-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Conditionals</h5>
+                        <p class="card-text">if, else if, else with real-life examples & revision.</p>
+                        <a href="conditions.html" class="btn btn-dark w-100">Start Topic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card topic-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Practice Zone</h5>
+                        <p class="card-text">MCQs, coding questions, and small mini-tasks.</p>
+                        <a href="practice.html" class="btn btn-dark w-100">Start Practice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <small>© 2025 JavaScript Tutorial Website</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

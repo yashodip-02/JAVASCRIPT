@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Variables & Data Types</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { background:#f8f9fa; }
+    .fade-in { animation: fadeIn 0.8s ease; }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    .example-box { background:#fff; border-radius:10px; padding:15px; box-shadow:0 0.3rem 0.8rem rgba(0,0,0,.05); }
+    .revision-box { background:#fff3cd; border-left:4px solid #ffc107; padding:12px 15px; border-radius:6px; }
+    code { background:#eee; padding:2px 5px; border-radius:4px; }
+</style>
+</head>
+<body>
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+<a class="navbar-brand fw-bold" href="index.html">JS Tutorial</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link" href="intro.html">Introduction</a></li>
+<li class="nav-item"><a class="nav-link active" href="variables.html">Variables</a></li>
+<li class="nav-item"><a class="nav-link" href="operators.html">Operators</a></li>
+<li class="nav-item"><a class="nav-link" href="conditions.html">Conditionals</a></li>
+<li class="nav-item"><a class="nav-link" href="practice.html">Practice</a></li>
+</ul>
+</div>
+</div>
+</nav>
+ 
+<div class="container py-4 fade-in">
+<h2>Variables in JavaScript</h2>
+<p>A variable is a container used to store data values in JavaScript.</p>
+ 
+  <h4>Declaration Keywords</h4>
+<table class="table table-bordered table-sm">
+<thead class="table-light">
+<tr>
+<th>Keyword</th>
+<th>Scope</th>
+<th>Redeclare?</th>
+<th>Reassign?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>var</code></td>
+<td>Function / Global</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Old style, hoisted</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>Block</td>
+<td>No</td>
+<td>Yes</td>
+<td>Modern, preferred for changing values</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>Block</td>
+<td>No</td>
+<td>No</td>
+<td>For constants (cannot reassign)</td>
+</tr>
+</tbody>
+</table>
+ 
+  <div class="example-box mb-4">
+<h5>Practical: var vs let vs const</h5>
+<button class="btn btn-primary btn-sm" onclick="showVarLetConst()">Run Example</button>
+<pre class="mt-2 mb-0" id="varLetConstOutput"></pre>
+</div>
+ 
+  <h4>Primitive Data Types</h4>
+<ul>
+<li><strong>Number</strong> – <code>10</code>, <code>3.14</code></li>
+<li><strong>String</strong> – <code>"Hello"</code>, <code>'World'</code></li>
+<li><strong>Boolean</strong> – <code>true</code>, <code>false</code></li>
+<li><strong>null</strong> – intentional empty value</li>
+<li><strong>undefined</strong> – value not assigned</li>
+</ul>
+ 
+  <div class="example-box mb-4">
+<h5>Practical: Detect Data Type</h5>
+<label class="form-label">Enter a value:</label>
+<input type="text" id="typeInput" class="form-control form-control-sm" placeholder="e.g. 10, true, hello">
+<button class="btn btn-success btn-sm mt-2" onclick="checkType()">Check Type</button>
+<p class="mt-2 mb-0" id="typeResult"></p>
+</div>
+ 
+  <div class="revision-box">
+<strong>Revision:</strong>
+<ul class="mb-0">
+<li>Use <code>let</code> when the value will change.</li>
+<li>Use <code>const</code> for fixed values.</li>
+<li>Primitive types: number, string, boolean, null, undefined.</li>
+</ul>
+</div>
+</div>
+ 
+<script>
+function showVarLetConst() {
+  var a = 10;
+  let b = 20;
+  const c = 30;
+ 
+  let output = "";
+  output += "var a = 10; (can redeclare & reassign)\\n";
+  output += "let b = 20; (block scope, reassign allowed)\\n";
+  output += "const c = 30; (block scope, cannot reassign)";
+ 
+  document.getElementById("varLetConstOutput").innerText = output;
+}
+ 
+function checkType() {
+  const val = document.getElementById("typeInput").value.trim();
+  let detected;
+  if (val === "") {
+    detected = "empty string";
+  } else if (val === "true" || val === "false") {
+    detected = "boolean (string entered, but logically boolean)";
+  } else if (!isNaN(Number(val))) {
+    detected = "number";
+  } else if (val.toLowerCase() === "null") {
+    detected = "null (string entered, but represents null)";
+  } else if (val.toLowerCase() === "undefined") {
+    detected = "undefined (string entered, but represents undefined)";
+  } else {
+    detected = "string";
+  }
+  document.getElementById("typeResult").innerText = "Detected as: " + detected;
+}
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+ 

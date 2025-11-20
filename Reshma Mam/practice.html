@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JavaScript Learning Website</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header { background: #333; color: #fff; padding: 20px; text-align: center; }
+    nav { background: #444; padding: 10px; display: flex; gap: 20px; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    .container { padding: 20px; }
+    section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+    h2 { margin-top: 0; }
+    .example-box { background: #eee; padding: 15px; border-radius: 8px; margin-top: 10px; }
+    button { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
+</style>
+</head>
+<body>
+ 
+<header>
+<h1>JavaScript Learning Website</h1>
+</header>
+ 
+<nav>
+<a href="#intro">Introduction</a>
+<a href="#history">History</a>
+<a href="#clientserver">Client vs Server</a>
+<a href="#variables">Variables</a>
+<a href="#operators">Operators</a>
+<a href="#logic">Logic</a>
+<a href="#conditionals">Conditionals</a>
+</nav>
+ 
+<!-- Dark Mode Toggle -->
+<div class="text-end p-2">
+<button id="darkToggle" class="btn btn-sm btn-outline-light" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</div>
+ 
+<div class="container">
+ 
+  <section id="intro">
+<h2>Introduction to JavaScript</h2>
+<p>JavaScript is a programming language used to create interactive websites. It allows you to add dynamic content such as sliders, popups, and calculations.</p>
+</section>
+ 
+  <section id="history">
+<h2>History of JavaScript</h2>
+<p>JavaScript was created in 1995 by Brendan Eich at Netscape. It was initially called LiveScript and later renamed JavaScript.</p>
+</section>
+ 
+  <section id="clientserver">
+<h2>Client-Side vs Server-Side</h2>
+<ul>
+<li><strong>Client-Side JS:</strong> Runs inside browser. Used for UI and interactions.</li>
+<li><strong>Server-Side JS:</strong> Runs on server using Node.js. Used for backend logic.</li>
+</ul>
+</section>
+ 
+  <section id="variables">
+<h2>Variables (var, let, const)</h2>
+<p>Variables store data values. JavaScript has three types:</p>
+<ul>
+<li><strong>var:</strong> function-scoped, can be redeclared.</li>
+<li><strong>let:</strong> block-scoped, cannot be redeclared.</li>
+<li><strong>const:</strong> block-scoped, cannot be changed.</li>
+</ul>
+ 
+    <button onclick="variableExample()">Run Variable Example</button>
+<div class="example-box" id="varResult">Output will appear here...</div>
+</section>
+ 
+  <section id="operators">
+<h2>Operators</h2>
+<h3>Arithmetic Operators</h3>
+<p>+, -, *, /, %</p>
+ 
+    <button onclick="arithmeticExample()">Try Arithmetic Example</button>
+<div class="example-box" id="arithResult">Output will appear here...</div>
+ 
+    <h3>Comparison Operators</h3>
+<p>==, ===, !=, <, >, <=, >=</p>
+ 
+    <button onclick="compareExample()">Try Comparison Example</button>
+<div class="example-box" id="compResult">Output will appear here...</div>
+ 
+    <h3>Assignment Operators</h3>
+<p>=, +=, -=, *=, /=</p>
+</section>
+ 
+  <section id="logic">
+<h2>Logical Operators</h2>
+<p>AND (&&), OR (||), NOT (!)</p>
+<button onclick="logicExample()">Run Logic Example</button>
+<div class="example-box" id="logicResult">Output will appear here...</div>
+</section>
+ 
+  <section id="conditionals">
+<h2>Conditional Statements</h2>
+<p>if, else if, else</p>
+ 
+    <button onclick="conditionExample()">Run Condition Example</button>
+<div class="example-box" id="condResult">Output will appear here...</div>
+</section>
+ 
+</div>
+ 
+<script>
+function variableExample() {
+  let x = 10;
+  const y = 5;
+  var z = x + y;
+  document.getElementById("varResult").innerText = `let x = 10, const y = 5 → Result: ${z}`;
+}
+ 
+function arithmeticExample() {
+  let a = 10, b = 3;
+  let result = `Add: ${a + b}, Sub: ${a - b}, Mul: ${a * b}, Div: ${a / b}, Mod: ${a % b}`;
+  document.getElementById("arithResult").innerText = result;
+}
+ 
+function compareExample() {
+  let a = 5;
+  let result = `a == "5": ${a == "5"}, a === "5": ${a === "5"}`;
+  document.getElementById("compResult").innerText = result;
+}
+ 
+function logicExample() {
+  let age = 20;
+  let check = (age > 18 && age < 30);
+  document.getElementById("logicResult").innerText = `Age 20 between 18 and 30? → ${check}`;
+}
+ 
+function conditionExample() {
+  let marks = 75;
+  let grade;
+  if (marks >= 90) grade = "A";
+  else if (marks >= 70) grade = "B";
+  else grade = "C";
+ 
+  document.getElementById("condResult").innerText = `Marks: 75 → Grade: ${grade}`;
+}
+</script>
+ 
+<script>
+// Dark mode toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('bg-dark');
+  document.body.classList.toggle('text-white');
+  const btn = document.getElementById('darkToggle');
+  if (document.body.classList.contains('bg-dark')) {
+    btn.innerText = '☀️ Light Mode';
+    btn.classList.remove('btn-outline-light');
+    btn.classList.add('btn-outline-warning');
+  } else {
+    btn.innerText = '🌙 Dark Mode';
+    btn.classList.remove('btn-outline-warning');
+    btn.classList.add('btn-outline-light');
+  }
+}
+</script>
+</body>
+</html>
