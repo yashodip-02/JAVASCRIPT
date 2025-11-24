@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <input type="number" id="numb1" placeholder="1ST num">
+        <input type="number" id="numb2" placeholder="2ND num">
+    </div>
+
+    <div class="div">
+        <p id="ans"></p>
+    </div>
+
+
+
+    <button onclick="add()">Addition</button>
+    <button onclick="sub()">Subtraction</button>
+    <button onclick="multi()">Multiplication</button>
+    <button onclick="div()">Division</button>
+    <button onclick="mod()">Modulus</button>
+
+    <script>
+
+
+        function add() {
+            let num1 = parseFloat(document.getElementById("numb1").value);
+            let num2 = parseFloat(document.getElementById("numb2").value);
+
+            let add = num1 + num2;
+            let ans = document.getElementById("ans")
+            ans.innerHTML = "Addition :" + " " + add;
+
+        }
+        function sub() {
+            let num1 = parseFloat(document.getElementById("numb1").value);
+            let num2 = parseFloat(document.getElementById("numb2").value);
+
+            let sub = num1 - num2;
+            let ans = document.getElementById("ans")
+            ans.innerHTML = "Subtraction :" + " " + sub;
+        }
+        function multi() {
+            let num1 = parseFloat(document.getElementById("numb1").value);
+            let num2 = parseFloat(document.getElementById("numb2").value);
+
+            let mul = num1 * num2;
+            let ans = document.getElementById("ans")
+            ans.innerHTML = "Mulitiplication :" + " " + mul;
+        }
+        function div() {
+            let num1 = parseFloat(document.getElementById("numb1").value);
+            let num2 = parseFloat(document.getElementById("numb2").value);
+
+            let div = num1 / num2;
+            let ans = document.getElementById("ans")
+            ans.innerHTML = "Division :" + " " + div;
+        }
+        function mod() {
+            let num1 = parseFloat(document.getElementById("numb1").value);
+            let num2 = parseFloat(document.getElementById("numb2").value);
+
+            let mod = num1 / num2;
+            let ans = document.getElementById("ans")
+            ans.innerHTML = "Modulus :" + " " + mod;
+        }
+    </script>
+
+</body>
+
+</html>
