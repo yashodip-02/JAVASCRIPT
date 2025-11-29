@@ -4,7 +4,7 @@ let a = "the baap company"
 console.log(a.substring(2,5));
 
 let b = "I love india"
-console.log(a.substring(8));
+console.log(b.substring(7));
 
 let c = "education of paregoan";
 console.log(c.substring(0));

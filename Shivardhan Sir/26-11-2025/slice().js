@@ -7,7 +7,7 @@ let b = "python is object orinted lang"
 console.log(a.slice(-8));
 
 let c = "education deparment";
-console.log(c.slice(8,12));
+console.log(c.slice(8,20));
 
 let d = "the history of computer"
 console.log(d.slice(-5));
