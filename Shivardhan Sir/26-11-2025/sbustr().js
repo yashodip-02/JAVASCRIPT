@@ -1,7 +1,7 @@
 // they extract part of a string with specifing length
 
 let a = "javascript is programming lang"
-console.log(a.substr(-7,-2));
+console.log(a.substr(7,2));
 
 let b = "python is object orinted lang"
 console.log(a.substr(8,5));

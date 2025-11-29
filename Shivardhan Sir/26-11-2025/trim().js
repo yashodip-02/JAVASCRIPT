@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // removes whitespace from both ends of the string
 
+=======
+>>>>>>> b86e55271abc7cee660693538c2a9dfbdbc90193
 let a = "The Baap Company   ";
 console.log(a.trim());
 

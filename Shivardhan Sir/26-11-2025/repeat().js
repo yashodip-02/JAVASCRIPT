@@ -13,4 +13,4 @@ let d = "company";
 console.log(d.repeat(87));
 
 let e = "the baap company4";
-console.log(e.repeat(100));
+console.log(e.repeat(0));
