@@ -1,0 +1,27 @@
+what is jsavascript?
+js is programming language that is used to make web pages interactive and dynamic.
+
+js developed by brendan eich in 1995.
+js first name is mocha. in 1995 may
+js second name is livescript. in september 1995 
+js third name is javascript. in december 1995 
+
+js engines:
+1. v8 (google chrome, node.js)
+2. spider monkey (mozilla firefox)
+3. chakra (microsoft edge)
+4. javascript core (safari)
+
+features of javascript:
+1. lightweight and interpreted language
+2. dynamically typed
+3. object-oriented
+4.use cliet side scripting and server side scripting
+5. single threaded 
+
+what is cliet side scripting?
+when this cide user see 
+
+what is server side scripting?
+when this code run on server and user see the output only.
+

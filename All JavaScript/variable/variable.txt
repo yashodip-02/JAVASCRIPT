@@ -1,0 +1,12 @@
+what is variable?
+variable is a store the data value.
+
+tyepes of variable:
+1. var
+    var is function scoped and can be re-declared and updated.
+2. let
+    let is block scoped and can be updated but not re-declared.
+3. const
+    const is block scoped and cannot be updated or re-declared.
+
+    
